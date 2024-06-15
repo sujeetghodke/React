@@ -1,8 +1,4 @@
-
-function Hello(){
-    return(
-        <h1>New file added</h1>
-    )
+function Hello() {
+  return <h1>New file added</h1>;
 }
-
-export default Hello    
+export default Hello;

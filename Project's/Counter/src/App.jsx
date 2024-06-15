@@ -4,31 +4,33 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  let [count, setCounter] = useState(10);
+  let [count, setCounter] = useState(0);
 
   //let count = 5;
   let addValue = () => {
-    count += 1;
-    setCounter(count);
-    // console.log(count);
-    // console.log("Value Added", Math.random());
-    if (setCounter(count) <= 20) {
-      return;
+    if (count < 10) {
+      setCounter(count + 1);
     }
   };
 
   let rmValue = () => {
-    // count = count - 1;
-    setCounter(count - 1);
+    if (count > 0) {
+      setCounter(count - 1);
+    }
   };
 
   return (
     <>
       <h1>Simple Project</h1>
       <h2>Counter Value : {count}</h2>
-      <button onClick={addValue}>Adding Value {count}</button>
+      <button onClick={addValue}>
+        {count >= 10 ? "Limit Reached" : "Click me"}
+      </button>
+      {/* {count >= 10 ? "Limit Reached" : "Click me"} */}
       <br /> <br />
-      <button onClick={rmValue}>Remove Value {count}</button>
+      <button onClick={rmValue}>
+        {count > 0 ? "Click me" : "Limit Reached"}
+      </button>
     </>
   );
 }
